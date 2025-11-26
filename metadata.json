@@ -1,0 +1,5 @@
+{
+  "name": "GetMyHotels Assistant",
+  "description": "A travel recommendation assistant cloning the Priceline Penny interface with GetMyHotels branding.",
+  "requestFramePermissions": []
+}
