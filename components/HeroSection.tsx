@@ -2,10 +2,10 @@ import React from 'react';
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-xl group cursor-pointer">
-      <img 
-        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop" 
-        alt="Traveler looking at mountains" 
+    <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden shadow-xl group cursor-pointer">
+      <img
+        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop"
+        alt="Traveler looking at mountains"
         className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-90"></div>
