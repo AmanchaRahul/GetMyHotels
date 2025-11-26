@@ -4,7 +4,7 @@ import Card from './Card';
 const MoreFromGetMyHotels: React.FC = () => {
   return (
     <div className="w-full">
-      <h2 className="text-[#0045B2] text-2xl font-bold mb-4">
+      <h2 className="text-[#F5F5F7] text-2xl font-semibold mb-4 tracking-wide">
         More from GetMyHotels
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

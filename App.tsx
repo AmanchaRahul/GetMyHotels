@@ -46,7 +46,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#EBF3FE] flex justify-center p-4 sm:p-8 lg:p-12 font-sans text-gray-900">
+    <div className="min-h-screen bg-[#0D0F13] flex justify-center p-4 sm:p-8 lg:p-12 font-sans text-gray-900">
       <div className="max-w-[1400px] w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
 
         {/* Left Column: Header, Search, Actions */}

@@ -16,15 +16,15 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="relative w-full max-w-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] rounded-full">
+    <form onSubmit={handleSubmit} className="relative w-full max-w-2xl">
       <input
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Ask GetMyHotels a question"
-        className="w-full h-16 pl-8 pr-20 rounded-full border border-gray-200 focus:border-blue-300 focus:ring-2 focus:ring-blue-100 outline-none text-lg text-gray-700 placeholder-gray-400 bg-white transition-all"
+        className="w-full h-16 pl-8 pr-20 rounded-[14px] border border-[rgba(255,255,255,0.1)] focus:border-[rgba(255,255,255,0.2)] outline-none text-lg text-[#F5F5F7] placeholder-[rgba(255,255,255,0.45)] bg-[rgba(255,255,255,0.07)] backdrop-blur-[14px] transition-all"
       />
-      <button type="submit" className="absolute right-2 top-2 bottom-2 w-12 rounded-full bg-gradient-to-br from-[#4F46E5] via-[#6366F1] to-[#8B5CF6] flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 transition-all z-10">
+      <button type="submit" className="absolute right-2 top-2 bottom-2 w-12 rounded-full bg-[rgba(255,255,255,0.10)] border border-[rgba(255,255,255,0.15)] flex items-center justify-center hover:bg-[rgba(255,255,255,0.14)] transition-all z-10">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 4V20" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
             <path d="M16 7V17" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
