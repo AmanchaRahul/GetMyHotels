@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import QuickActions from './components/QuickActions';
 import HeroSection from './components/HeroSection';
 import MoreFromGetMyHotels from './components/MoreFromGetMyHotels';
-import ChatResponse from './components/ChatResponse';
+import ChatWindow from './components/ChatWindow';
 
 interface Message {
   text: string;
@@ -13,11 +13,15 @@ interface Message {
 
 const App: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const handleSearch = (query: string) => {
     // Add user message
     const userMessage: Message = { text: query, isUser: true };
     setMessages((prev) => [...prev, userMessage]);
+
+    // Open chat window
+    setIsChatOpen(true);
 
     // Simulate bot response after a short delay
     setTimeout(() => {
@@ -29,6 +33,18 @@ const App: React.FC = () => {
     }, 800);
   };
 
+  const handleClearConversation = () => {
+    setMessages([]);
+  };
+
+  const handleNewConversation = () => {
+    setMessages([]);
+  };
+
+  const handleCloseChat = () => {
+    setIsChatOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-[#EBF3FE] flex justify-center p-4 sm:p-8 lg:p-12 font-sans text-gray-900">
       <div className="max-w-[1400px] w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
@@ -38,7 +54,6 @@ const App: React.FC = () => {
           <Header />
           <div className="space-y-8">
             <SearchBar onSubmit={handleSearch} />
-            <ChatResponse messages={messages} />
             <QuickActions />
           </div>
         </div>
@@ -50,6 +65,17 @@ const App: React.FC = () => {
         </div>
 
       </div>
+
+      {/* Chat Window Modal */}
+      {isChatOpen && (
+        <ChatWindow
+          messages={messages}
+          onClose={handleCloseChat}
+          onClearConversation={handleClearConversation}
+          onNewConversation={handleNewConversation}
+          onSendMessage={handleSearch}
+        />
+      )}
     </div>
   );
 };
